@@ -1,0 +1,45 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.footer {
+  position: relative;
+  padding: 90px 0;
+  background-color: $black-color;
+
+  @include mobile {
+    padding: 50px 0 60px 0;
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 24px;
+  }
+
+  &__bottom {
+    border-top: 1px solid $border-color;
+    padding-top: 24px;
+    text-align: center;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: $font-size-small;
+    color: $white-color;
+  }
+
+  &__button {
+    @include mobile {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+    }
+  }
+}

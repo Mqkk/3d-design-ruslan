@@ -1,0 +1,83 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
+
+.why {
+  padding: 120px 0;
+
+  @include mobile {
+    padding: 60px 0;
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+
+    @include tablet {
+      gap: 60px;
+    }
+
+    @include mobile {
+      gap: 40px;
+    }
+  }
+
+  &__data {
+    display: flex;
+    gap: 100px;
+    max-width: 900px;
+
+    @include tablet {
+      gap: 60px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      gap: 20px
+    }
+  }
+}
+
+.dataItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  @include mobile {
+    gap: 8px;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: $font-size-h1;
+    line-height: 116%;
+    color: $black-color;
+
+    @include tablet {
+      font-size: $font-size-h2;
+    }
+
+    @include mobile {
+      font-size: 28px;
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 500;
+    font-size: $font-size-medium;
+    color: $black-color;
+
+    @include tablet {
+      font-size: $font-size-base;
+    }
+
+    @include mobile {
+      font-size: $font-size-small;
+    }
+  }
+}

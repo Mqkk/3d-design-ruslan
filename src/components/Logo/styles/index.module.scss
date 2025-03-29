@@ -1,0 +1,19 @@
+@use "@/styles/mixins" as *;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  &__text {
+    @include logoText;
+
+    @include tablet {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

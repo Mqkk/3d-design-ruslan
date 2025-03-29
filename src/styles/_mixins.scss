@@ -1,0 +1,54 @@
+@use "variables" as *;
+
+@mixin laptop {
+  @media (max-width: ($breakpoint-laptop)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: ($breakpoint-tablet)) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: ($breakpoint-mobile)) {
+    @content;
+  }
+}
+
+@mixin container {
+  margin: 0 auto;
+  padding: 0 $container-offset;
+  width: 100%;
+  max-width: $container-width;
+}
+
+@mixin logoText {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 105%;
+  color: $white-color;
+}
+
+@mixin descrDecor {
+  margin: 0;
+  border-radius: 20px;
+  padding: 0 15px;
+  width: fit-content;
+  text-transform: uppercase;
+  line-height: 147.5%;
+  letter-spacing: 2px;
+  color: $black-color;
+  background-color: $primary-color;
+
+  @include tablet {
+    padding: 0 12px;
+    font-size: $font-size-small;
+  }
+
+  @include mobile {
+    font-size: $font-size-extra-small;
+  }
+}

@@ -1,0 +1,10 @@
+@use "variables" as *;
+@use "mixins" as *;
+@use "reset" as *;
+@use "typography" as *;
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: $background-color;
+}

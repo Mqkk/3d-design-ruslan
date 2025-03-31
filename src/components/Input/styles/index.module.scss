@@ -1,0 +1,52 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+
+  @include mobile {
+    gap: 4px;
+  }
+}
+
+.inputLabel {
+  font-size: $font-size-base;
+  color: $black-color;
+
+  @include mobile {
+    font-size: $font-size-small;
+  }
+}
+
+.input {
+  outline: none;
+  border: 1px solid #c1c1c1;
+  border-radius: 22px;
+  padding: 22px 30px;
+  $font-family: $font-family;
+  font-size: $font-size-base;
+  transition: border-color 0.3s;
+
+  @include mobile {
+    padding: 16px 22px;
+    font-size: $font-size-small;
+  }
+
+  &_textarea {
+    font-family: $font-family;
+    resize: none;
+    min-height: 157px;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+  }
+
+  &::placeholder {
+    font-family: $font-family;
+    color: $placeholder-color;
+  }
+}

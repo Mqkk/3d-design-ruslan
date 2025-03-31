@@ -8,11 +8,18 @@
     justify-items: end;
     gap: 60px;
 
+    &_reverse {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+
     @include tablet {
+      display: grid;
       gap: 30px;
     }
 
     @include mobile {
+      display: grid;
       grid-template-columns: repeat(1, 1fr);
       justify-items: center;
     }

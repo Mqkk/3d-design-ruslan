@@ -1,0 +1,171 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.order {
+  padding-bottom: 120px;
+
+  @include tablet {
+    padding-bottom: 0;
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    border-radius: 30px;
+    padding: 140px 120px;
+    background-color: $background-secondary-color;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 40px;
+      border-radius: 0;
+      padding: 120px 18px;
+    }
+
+    @include mobile {
+      padding: 60px 18px;
+    }
+  }
+
+  &__content {
+    width: 372px;
+    min-width: 372px;
+
+    @include tablet {
+      width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  &__subtitle {
+    @include descrDecor;
+
+    & {
+      margin-bottom: 6px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 12px;
+  }
+
+  &__descr {
+    margin: 0;
+    margin-bottom: 36px;
+
+    @include tablet {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+
+    @include tablet {
+      gap: 24px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    width: 100%;
+    max-width: 500px;
+
+    @include tablet {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @include mobile {
+      gap: 18px;
+    }
+  }
+
+  &__formTop {
+    display: flex;
+    gap: 26px;
+    flex-wrap: wrap;
+
+    @include mobile {
+      gap: 18px;
+    }
+  }
+
+  &__button {
+    width: fit-content;
+  }
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  svg {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
+      min-height: 40px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 400;
+    font-size: $font-size-base;
+    line-height: 147.5%;
+    color: $text-color;
+
+    @include tablet {
+      font-size: $font-size-small;
+    }
+  }
+
+  &__info {
+    margin: 0;
+    font-weight: 600;
+    font-size: $font-size-h4;
+    line-height: 116%;
+    color: $black-color;
+
+    @include tablet {
+      font-size: $font-size-medium;
+    }
+
+    @include mobile {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+.form {
+  &__input {
+    &_phone {
+      grid-column: 2 span;
+    }
+
+    &_textarea {
+      grid-column: 2 span;
+    }
+  }
+}

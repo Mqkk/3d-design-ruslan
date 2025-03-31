@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 
-import { Form } from "@/components/Sections/Form";
+import { Order } from "@/components/Sections/Order";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={inter.variable}>
         <Header />
         {children}
-        <Form />
+        <Order />
         <Footer />
       </body>
     </html>

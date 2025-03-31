@@ -25,6 +25,10 @@ h2 {
   @include tablet {
     font-size: 32px;
   }
+
+  @include mobile {
+    font-size: 24px;
+  }
 }
 
 h3 {

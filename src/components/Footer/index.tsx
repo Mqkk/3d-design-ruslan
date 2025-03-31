@@ -7,6 +7,13 @@ import { Logo } from "../Logo";
 import styles from "./styles/index.module.scss";
 
 export const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={styles.footer__container}>
@@ -16,7 +23,7 @@ export const Footer = () => {
           <Button
             isSmall
             title="Наверх"
-            onClick={() => {}}
+            onClick={scrollToTop}
             className={styles.footer__button}
           />
         </div>

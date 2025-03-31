@@ -1,10 +1,11 @@
 "use client";
 
 import { Navigation } from "../Navigation";
+import { Button } from "../Button";
 import { Logo } from "../Logo";
 
 import { IconHeaderClock, IconHeaderPin } from "@/helpers/icons";
-import { Button } from "../Button";
+import { scrollToOrder } from "@/helpers/scrollToOrder";
 
 import styles from "./styles/index.module.scss";
 
@@ -29,7 +30,7 @@ export const Header = () => {
           <Logo />
           <Navigation />
           <Button
-            onClick={() => {}}
+            onClick={scrollToOrder}
             title="Заказать дизайн"
             className={styles.header__button}
           />

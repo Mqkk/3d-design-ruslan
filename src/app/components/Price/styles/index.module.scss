@@ -71,7 +71,7 @@
   }
 
   @include mobile {
-    gap: 10px
+    gap: 10px;
   }
 
   &__top {
@@ -113,8 +113,14 @@
 
   &__priceLeft {
     @include descrDecor;
-    color: $white-color;
-    background-color: $dark-grey-color;
+
+    & {
+      color: $white-color;
+    }
+
+    & {
+      background-color: $dark-grey-color;
+    }
   }
 
   &__priceRight {

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import clsx from "clsx";
 
 import { IconCheckGreen } from "@/helpers/icons";
 
@@ -11,6 +12,7 @@ interface IProps {
   descr: string;
   list: string[];
   subtitle: string;
+  isReverse?: boolean;
 }
 
 export const BlockWithImg = ({
@@ -20,10 +22,16 @@ export const BlockWithImg = ({
   descr,
   list,
   subtitle,
+  isReverse = false,
 }: IProps) => {
   return (
     <div className={styles.block}>
-      <div className={styles.block__container}>
+      <div
+        className={clsx(
+          styles.block__container,
+          isReverse && styles.block__container_reverse
+        )}
+      >
         <div className={styles.block__content}>
           <span className={styles.block__subtitle}>{subtitle}</span>
           <h2 className={styles.block__title}>{title}</h2>

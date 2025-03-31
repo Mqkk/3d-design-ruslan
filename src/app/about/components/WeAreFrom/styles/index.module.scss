@@ -1,0 +1,26 @@
+@use "@/styles/mixins" as *;
+@use "@/styles/variables" as *;
+
+.weAreFrom {
+  padding: 120px 0;
+
+  @include mobile {
+    padding: 60px 0;
+  }
+
+  &__container {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+
+    @include tablet {
+      gap: 60px;
+    }
+
+    @include mobile {
+      gap: 40px;
+    }
+  }
+}

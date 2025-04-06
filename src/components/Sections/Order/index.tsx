@@ -36,7 +36,7 @@ export const Order = () => {
   };
 
   useEffect(() => {
-    if (state.success) {
+    if (state.success && !isPending) {
       setSuccessMessage(state.success);
       setFormData({ name: "", email: "", phone: "", order: "" });
 
@@ -46,7 +46,7 @@ export const Order = () => {
 
       return () => clearTimeout(timer);
     }
-  }, [state.success]);
+  }, [state, isPending]);
 
   return (
     <section className={styles.order} id="order">

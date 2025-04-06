@@ -32,6 +32,7 @@ export const Button = ({
     [styles.button_small]: isSmall,
     [styles.button_secondary]: isSecondary,
     [styles.button_big]: isBig,
+    [styles.button_disabled]: disabled,
   };
 
   return isLink ? (

@@ -26,4 +26,9 @@
     background-color: $black-color;
     color: $white-color;
   }
+
+  &_disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }

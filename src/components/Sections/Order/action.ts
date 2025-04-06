@@ -19,7 +19,27 @@ export async function submitOrder(
     return { error: "Введите корректный email" };
   }
 
-  console.log("Form submitted:", { name, email, phone, order });
+  try {
+    const response = await fetch(
+      "http://212.109.195.50:8000/api/v1/applications",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, phone, description: order }),
+      }
+    );
 
-  return { success: "Заявка успешно отправлена!" };
+    if (!response.ok) {
+      throw new Error("Ошибка при отправке данных на сервер");
+    } else {
+      const result = await response.json();
+      return { success: result.message || "Заявка успешно отправлена!" };
+    }
+  } catch (error) {
+    return {
+      error: error instanceof Error ? error.message : "Неизвестная ошибка",
+    };
+  }
 }
